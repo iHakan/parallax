@@ -17,12 +17,18 @@ const style = StyleSheet.create({
     marginBottom: 5,
     width: w * 1,
     height: h * 0.5,
-    alignItems:'center'
+    alignItems:'center',
+    
   },
   text: {
     color: '#eee',
     fontSize: 50,
     fontWeight:'bold',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    width: w * 1,
+    height: h * 0.5,
+    textAlign:'center',
+    paddingTop: 10
   },
 });
 

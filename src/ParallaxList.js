@@ -4,7 +4,6 @@ import {
   FlatList,
   Text,
   View,
-  Image,
   ImageBackground,
 } from 'react-native';
 import {style} from './style';
