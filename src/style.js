@@ -14,9 +14,12 @@ const style = StyleSheet.create({
     height: '100%',
   },
   text: {
-    
-    color: 'dodgerblue',
-    fontSize: 40,
+    width: w*0.7,
+    color: '#eee',
+    fontSize: 50,
+    position:'relative',
+    fontWeight:'bold',
+    margin: 'auto',
   },
   con: {
     flex: 1,
@@ -26,7 +29,8 @@ const style = StyleSheet.create({
     alignItems: 'center',
     borderColor: '#eee',
   },
-  photos: {
+  imageBackground: {
+    marginBottom: 5,
     width: w * 1.5,
     height: h * 0.5,
   },
