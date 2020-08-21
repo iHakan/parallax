@@ -14,23 +14,21 @@ const style = StyleSheet.create({
     height: '100%',
   },
   text: {
-    top: '10%',
+    
     color: 'dodgerblue',
     fontSize: 40,
   },
   con: {
-    flex: 0.5,
+    flex: 1,
     padding: 0,
-    marginBottom: 5,
+    marginBottom: 0,
     //borderWidth: 1,
     alignItems: 'center',
     borderColor: '#eee',
   },
   photos: {
-    width: w * 1,
+    width: w * 1.5,
     height: h * 0.5,
-    margin: 0,
-    padding: 0,
   },
 });
 

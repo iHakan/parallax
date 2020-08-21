@@ -7,18 +7,18 @@ export default class ParallaxList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataSource: [],
-      isLoading: true,
+      dataSource: [], //initially our data source is empty
+      isLoading: true, //Loading animation is working
     };
   }
-
+  //Starting the page
   componentDidMount() {
     this.setState({
-      dataSource: data,
-      isLoading: false,
+      dataSource: data, //Fetching the data from the json file
+      isLoading: false, //Loading animation stopped.
     });
   }
-
+    //To render each photo individually we created a function
   _renderItem = ({item, index}) => {
     return (
       <View style={style.con}>
@@ -32,11 +32,12 @@ export default class ParallaxList extends React.Component {
     const {dataSource, isLoading} = this.state;
 
     return (
-      <View style={{flex: 1, padding: 24}}>
+      <View style={{flex: 1, padding:0}}>
         {isLoading ? (
           <ActivityIndicator />
         ) : (
-          <FlatList data={dataSource} renderItem={this._renderItem} />
+          //Rendering everything inside the FlatList to have a scroll effect
+          <FlatList data={dataSource} renderItem={this._renderItem} /> 
         )}
       </View>
     );
