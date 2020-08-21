@@ -5,6 +5,8 @@ import {
   Text,
   View,
   ImageBackground,
+  StyleSheet,
+  Animated
 } from 'react-native';
 import {style} from './style';
 import data from './movieGenresList.json';
@@ -28,8 +30,12 @@ export default class ParallaxList extends React.Component {
   _renderItem = ({item, index}) => {
     return (
       <View style={style.con}>
-        <ImageBackground style={style.imageBackground} source={{uri: `${item.image}`}}>
-          <Text style={style.text}>{item.genre}</Text>
+        <ImageBackground resizeMode='cover' style={style.imageBackground} source={{uri: `${item.image}`}}>
+        <View style={style.overlay}/>
+          <Animated.View>
+
+            <Text style={style.text}>{item.genre}</Text>
+          </Animated.View>
         </ImageBackground>
       </View>
     );
