@@ -1,12 +1,14 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {SafeAreaView, Text} from 'react-native';
+import {style} from './style';
+import ParallaxList from './ParallaxList';
 
 class App extends React.Component {
   render() {
     return (
-      <View>
-        <Text>Test</Text>
-      </View>
+      <SafeAreaView style={style.mainContainer}>
+        <ParallaxList />
+      </SafeAreaView>
     );
   }
 }
