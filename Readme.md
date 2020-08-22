@@ -40,7 +40,7 @@ In programming tools;
 
 - [x] Create components 
 - [x] Link components in the ***App.js*** file
-- [x] Use the ***.json*** file given for fetching datas
+- [x] Use the ***.json*** file given for fetching data
 - [x] Fetch the ***images*** and ***titles*** for a dynamically working app
 - [x] Style them as requested
 - [ ] Apply the animation as wanted > Dummy Animation for further improvement :soon:
