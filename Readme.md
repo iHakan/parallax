@@ -2,7 +2,7 @@
 
 ## :rocket: What is Parallax?
 
-Basically the "Parallax" is one of the terms to define an animation on the web/mobile technologies which looks dynamic. As an example; you will find those kind of animations on **_Facebook_** and **_Twitter_** or even **_Linkedin_** while scrolling the header/title of your page down, header or the profile image gets bitter and when your release it goes back to the previous looking.
+Basically the "Parallax" is one of the terms to define an animation on the web/mobile technologies which looks dynamic. As an example; you will find those kind of animations on **_Facebook_** and **_Twitter_** or even **_Linkedin_** while scrolling the header/title of your page down, header or the profile image gets bigger and when your release it goes back to the previous looking.
 
 <div>
 <p>Here is an example;</p>
