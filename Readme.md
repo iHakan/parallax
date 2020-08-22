@@ -1,4 +1,5 @@
 # ParallaxList :iphone:
+<br>
 
 ## :rocket: What is Parallax?
 
