@@ -3,11 +3,9 @@ import {
   ActivityIndicator,
   FlatList,
   Text,
-  ScrollView,
   View,
   ImageBackground,
   Animated,
-  Easing,
 } from 'react-native';
 import {style} from './style';
 import data from './movieGenresList.json';
@@ -30,11 +28,7 @@ export default class ParallaxList extends React.Component {
     });
   }
 
-  //Text'imize animasyon ekleyeceğiz.
-  //onScroll olduğunda textimizin yeri belli bir yere kadar ease olarak Y direction'da değişecek
-  //Dimensions kullanarak height'ını değiştireceğiz
   //To render each photo individually we created a function
-
   _renderItem = ({item, index}) => {
     const movingText = this.state.textAnim.interpolate({
       inputRange: [0, 3200],
