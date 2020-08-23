@@ -2,6 +2,7 @@ import React from 'react';
 import {
   ActivityIndicator,
   FlatList,
+  StatusBar,
   Text,
   View,
   ImageBackground,
@@ -9,6 +10,8 @@ import {
 } from 'react-native';
 import {style} from './style';
 import data from './movieGenresList.json';
+
+const barHeight = StatusBar.currentHeight;
 
 export default class ParallaxList extends React.Component {
   constructor(props) {
@@ -37,6 +40,7 @@ export default class ParallaxList extends React.Component {
     });
     return (
       <View style={style.con}>
+        <StatusBar backgroundColor={'white'} barStyle={'dark-content'} translucent={true} />
         <ImageBackground
           style={style.imageBackground}
           source={{uri: `${item.image}`}}>
@@ -56,7 +60,7 @@ export default class ParallaxList extends React.Component {
     const {dataSource, isLoading} = this.state;
 
     return (
-      <View style={{flex: 1, padding: 0}}>
+      <View style={{flex: 1, paddingTop: barHeight, paddingBottom: barHeight}}>
         {isLoading ? (
           <ActivityIndicator />
         ) : (
