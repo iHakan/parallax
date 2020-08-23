@@ -1,4 +1,5 @@
 # ParallaxList :iphone:
+
 <br>
 
 ## :rocket: What is Parallax?
@@ -54,4 +55,23 @@ In this project the technologies down below were used to create this app;
 - [x] Use the **_.json_** file given for fetching data
 - [x] Fetch the **_images_** and **_titles_** for a dynamically working app
 - [x] Style them as requested
-- [ ] Apply the animation as wanted > Dummy Animation for further improvement :soon:
+- [x] Apply the animation as wanted (Sliding the Headers down as scrolling down)
+
+<br/>
+
+## :star: ParallaxList Demo
+
+<div align="center">
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <img src="./assets/images/parallaxList.gif" alt="parallaxList.gif">
+<br/>
+<br/>
+
+   Made with :heart: 
+
+   
+
+</div>
