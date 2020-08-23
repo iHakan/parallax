@@ -40,6 +40,7 @@ export default class ParallaxList extends React.Component {
       outputRange: [-20, h * 0.39],
       extrapolate: 'clamp',
     });
+
     return (
       <View style={style.con}>
         <StatusBar
@@ -51,12 +52,12 @@ export default class ParallaxList extends React.Component {
           style={style.imageBackground}
           source={{uri: `${item.image}`}}>
           <View style={style.overlay} />
-          <Animated.ScrollView
+          <Animated.View
             style={{
               transform: [{translateY: movingText}],
             }}>
             <Text style={style.text}>{item.genre}</Text>
-          </Animated.ScrollView>
+          </Animated.View>
         </ImageBackground>
       </View>
     );
@@ -64,7 +65,6 @@ export default class ParallaxList extends React.Component {
 
   render() {
     const {dataSource, isLoading} = this.state;
-
     return (
       <View style={{flex: 1, paddingTop: barHeight}}>
         {isLoading ? (
@@ -73,7 +73,6 @@ export default class ParallaxList extends React.Component {
           //Rendering everything inside the FlatList to have a scroll effect
           <Animated.FlatList
             data={dataSource}
-            bounce={true}
             renderItem={this._renderItem}
             keyExtractor={(item) => item.id}
             scrollEventThrottle={16}
