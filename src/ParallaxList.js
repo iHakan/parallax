@@ -3,12 +3,11 @@ import {
   ActivityIndicator,
   FlatList,
   Text,
+  ScrollView,
   View,
   ImageBackground,
-  StyleSheet,
   Animated,
   Easing,
-  Dimensions
 } from 'react-native';
 import {style} from './style';
 import data from './movieGenresList.json';
@@ -19,19 +18,8 @@ export default class ParallaxList extends React.Component {
     this.state = {
       dataSource: [], //initially our data source is empty
       isLoading: true, //Loading animation is working
-      scrollY: new Animated.Value(0)
+      textAnim: new Animated.Value(0),
     };
-  }
-
-   
-  //Moving text function 
-  _movingText = () => {
-    //console.log("Fonksiyon çalışıyor!");
-    Animated.timing(this.state.scrollY,{
-      toValue:300,
-      duration: 1000,
-      asing: Easing.cubic,
-    }).start();
   }
 
   //Starting the page
@@ -41,18 +29,30 @@ export default class ParallaxList extends React.Component {
       isLoading: false, //Loading animation stopped.
     });
   }
+
   //Text'imize animasyon ekleyeceğiz.
   //onScroll olduğunda textimizin yeri belli bir yere kadar ease olarak Y direction'da değişecek
   //Dimensions kullanarak height'ını değiştireceğiz
   //To render each photo individually we created a function
+
   _renderItem = ({item, index}) => {
+    const movingText = this.state.textAnim.interpolate({
+      inputRange: [0, 3200],
+      outputRange: [0, 300],
+      extrapolate: 'clamp',
+    });
     return (
       <View style={style.con}>
-        <ImageBackground  style={style.imageBackground} source={{uri: `${item.image}`}}>
-        <View style={style.overlay}/>
-          <Animated.View style={{top: this.state.scrollY}}>
+        <ImageBackground
+          style={style.imageBackground}
+          source={{uri: `${item.image}`}}>
+          <View style={style.overlay} />
+          <Animated.ScrollView
+            style={{
+              transform: [{translateY: movingText}],
+            }}>
             <Text style={style.text}>{item.genre}</Text>
-          </Animated.View>
+          </Animated.ScrollView>
         </ImageBackground>
       </View>
     );
@@ -67,7 +67,25 @@ export default class ParallaxList extends React.Component {
           <ActivityIndicator />
         ) : (
           //Rendering everything inside the FlatList to have a scroll effect
-          <FlatList data={dataSource} renderItem={this._renderItem} onScroll={this._movingText}/>
+          <Animated.FlatList
+            data={dataSource}
+            bounce={true}
+            renderItem={this._renderItem}
+            keyExtractor={(item) => item.id}
+            scrollEventThrottle={16}
+            onScroll={Animated.event(
+              [
+                {
+                  nativeEvent: {
+                    contentOffset: {
+                      y: this.state.textAnim,
+                    },
+                  },
+                },
+              ],
+              {useNativeDriver: true},
+            )}
+          />
         )}
       </View>
     );
