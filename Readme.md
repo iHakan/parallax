@@ -67,7 +67,7 @@ In this project the technologies down below were used to create this app;
   <br/>
   <br/>
 
-  ![parallaxList](./assets/images/parallaxList.gif "ParallaxList-Demo")
+  ![parallaxList](https://user-images.githubusercontent.com/58476509/90978596-b207ea00-e557-11ea-91fa-9bc96604bac4.GIF "Parallax - Demo")
 
 <br/>
 <br/>
