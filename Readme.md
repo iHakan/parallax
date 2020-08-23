@@ -43,7 +43,7 @@ In this project the technologies down below were used to create this app;
 - Visual Studio Code
 - Android Studio
 - Emulator
-- Expo.io for IOS devices
+- [Expo.io](https://www.expo.io) for IOS devices
 - Git & GitHub
 
 <br/>
