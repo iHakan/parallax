@@ -10,8 +10,10 @@ import {
 } from 'react-native';
 import {style} from './style';
 import data from './movieGenresList.json';
+import {h} from './constants';
 
 const barHeight = StatusBar.currentHeight;
+const dataLength = data.length;
 
 export default class ParallaxList extends React.Component {
   constructor(props) {
@@ -34,13 +36,17 @@ export default class ParallaxList extends React.Component {
   //To render each photo individually we created a function
   _renderItem = ({item, index}) => {
     const movingText = this.state.textAnim.interpolate({
-      inputRange: [0, 3200],
-      outputRange: [0, 300],
+      inputRange: [0, 320 * dataLength],
+      outputRange: [0, h * 0.38],
       extrapolate: 'clamp',
     });
     return (
       <View style={style.con}>
-        <StatusBar backgroundColor={'white'} barStyle={'dark-content'} translucent={true} />
+        <StatusBar
+          backgroundColor={'white'}
+          barStyle={'dark-content'}
+          translucent={true}
+        />
         <ImageBackground
           style={style.imageBackground}
           source={{uri: `${item.image}`}}>
