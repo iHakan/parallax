@@ -12,6 +12,8 @@ import {style} from './style';
 import data from './movieGenresList.json';
 import {h} from './constants';
 
+//Rather than storing the constants in the constants.js file
+//Stored them here for less import and useless import of data to the file
 const barHeight = StatusBar.currentHeight;
 const dataLength = data.length;
 
@@ -65,6 +67,7 @@ export default class ParallaxList extends React.Component {
 
   render() {
     const {dataSource, isLoading} = this.state;
+
     return (
       <View style={{flex: 1, paddingTop: barHeight}}>
         {isLoading ? (
