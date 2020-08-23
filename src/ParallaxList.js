@@ -36,8 +36,8 @@ export default class ParallaxList extends React.Component {
   //To render each photo individually we created a function
   _renderItem = ({item, index}) => {
     const movingText = this.state.textAnim.interpolate({
-      inputRange: [0, 320 * dataLength],
-      outputRange: [0, h * 0.38],
+      inputRange: [-h * 0.39, 320 * dataLength],
+      outputRange: [-20, h * 0.39],
       extrapolate: 'clamp',
     });
     return (
@@ -91,9 +91,8 @@ export default class ParallaxList extends React.Component {
             )}
           />
         )}
-        <View
-          style={{height: barHeight, backgroundColor: 'white'}}>
-          <Text style={{color: 'white'}} >FOOTER</Text>
+        <View style={{height: barHeight, backgroundColor: 'white'}}>
+          <Text style={{color: 'white'}}>FOOTER</Text>
         </View>
       </View>
     );
