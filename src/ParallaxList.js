@@ -11,7 +11,7 @@ import {
 import {style} from './style';
 import data from './movieGenresList.json';
 
-//console.log(StatusBar.currentHeight) => 24;
+const barHeight = StatusBar.currentHeight;
 
 export default class ParallaxList extends React.Component {
   constructor(props) {
@@ -60,7 +60,7 @@ export default class ParallaxList extends React.Component {
     const {dataSource, isLoading} = this.state;
 
     return (
-      <View style={{flex: 1, paddingTop: 24, paddingBottom: 24}}>
+      <View style={{flex: 1, paddingTop: barHeight, paddingBottom: barHeight}}>
         {isLoading ? (
           <ActivityIndicator />
         ) : (
