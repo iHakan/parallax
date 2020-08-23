@@ -66,7 +66,7 @@ In this project the technologies down below were used to create this app;
   <br/>
   <br/>
   <br/>
-  <img src="./assets/images/parallaxList.gif" alt="parallaxList.gif">
+  <img src="./assets/images/parallaxList.gif" alt="parallaxList.gif" width="200px">
 <br/>
 <br/>
 
