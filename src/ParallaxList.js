@@ -60,7 +60,7 @@ export default class ParallaxList extends React.Component {
     const {dataSource, isLoading} = this.state;
 
     return (
-      <View style={{flex: 1, paddingTop: 24}}>
+      <View style={{flex: 1, paddingTop: 24, paddingBottom: 24}}>
         {isLoading ? (
           <ActivityIndicator />
         ) : (
