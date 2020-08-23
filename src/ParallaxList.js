@@ -7,6 +7,7 @@ import {
   View,
   ImageBackground,
   Animated,
+  Easing,
 } from 'react-native';
 import {style} from './style';
 import data from './movieGenresList.json';
@@ -19,23 +20,6 @@ export default class ParallaxList extends React.Component {
       isLoading: true, //Loading animation is working
       textAnim: new Animated.Value(0),
     };
-  }
-
-  //Animation
-  animate() {
-    //alert('Alert is working for scroll!');
-    Animated.event(
-      [
-        {
-          nativeEvent: {
-            contentOffset: {
-              y: this.state.textAnim,
-            },
-          },
-        },
-      ],
-      {useNativeDriver: true},
-    );
   }
 
   //Starting the page
@@ -53,8 +37,9 @@ export default class ParallaxList extends React.Component {
 
   _renderItem = ({item, index}) => {
     const movingText = this.state.textAnim.interpolate({
-      inputRange: [0, 5000],
+      inputRange: [0, 3200],
       outputRange: [0, 300],
+      extrapolate: 'clamp',
     });
     return (
       <View style={style.con}>
@@ -84,10 +69,22 @@ export default class ParallaxList extends React.Component {
           //Rendering everything inside the FlatList to have a scroll effect
           <Animated.FlatList
             data={dataSource}
+            bounce={true}
             renderItem={this._renderItem}
             keyExtractor={(item) => item.id}
             scrollEventThrottle={16}
-            onScroll={this.animate.bind(this)}
+            onScroll={Animated.event(
+              [
+                {
+                  nativeEvent: {
+                    contentOffset: {
+                      y: this.state.textAnim,
+                    },
+                  },
+                },
+              ],
+              {useNativeDriver: true},
+            )}
           />
         )}
       </View>
