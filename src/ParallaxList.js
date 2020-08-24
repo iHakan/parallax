@@ -38,13 +38,13 @@ export default class ParallaxList extends React.Component {
   //To render each photo individually we created a function
   _renderItem = ({item, index}) => {
     const movingText = this.state.textAnim.interpolate({
-      inputRange: [-h * 0.39, 320 * dataLength],
+      inputRange: [-h * 0.39, 320 * dataLength], //Minus values are for the flexible ends
       outputRange: [-20, h * 0.39],
       extrapolate: 'clamp',
     });
 
     return (
-      <View style={style.con}>
+      <View>
         <StatusBar
           backgroundColor={'white'}
           barStyle={'dark-content'}
