@@ -68,7 +68,7 @@ In this project the technologies down below were used to create this app;
 <br/>
 
 ## :star: ParallaxList Demo
-:arrow_right: In our application, texts are moving as we scroll the screen to the _opposite direction_!
+:arrow_right: In our application, texts are moving as we scroll the screen to the ***opposite direction***!
 
 <div align="center">
   <br/>
