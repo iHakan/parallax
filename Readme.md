@@ -59,6 +59,14 @@ In this project the technologies down below were used to create this app;
 
 <br/>
 
+## :books: References
+- [React Native Docs](https://reactnative.dev/docs/animated)
+- [StackOverFlow](https://stackoverflow.com/questions/49481934/fetching-local-json)
+- [Youtube - Catalin Mirron](https://www.youtube.com/watch?v=cGTD4yYgEHc&t=564s)
+- [Medium - Zohar Levin](https://medium.com/dailyjs/how-i-linked-animated-headers-to-scroll-position-in-react-native-1a4906fca25b)
+
+<br/>
+
 ## :star: ParallaxList Demo
 :arrow_right: In our application, texts are moving as we scroll the screen to the _opposite direction_!
 
